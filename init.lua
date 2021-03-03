@@ -98,9 +98,9 @@ function obj.initSpaces()
     
     local screen = spaces.mainScreenUUID()
     for space_number, space_id in ipairs(spaces.layout()[screen]) do
-        local name = names[space_number]
-        if name == nil then
-            name = "Space " .. tostring(space_number) -- default name
+        local name = "Space " .. tostring(space_number) -- default name
+        if names and names[space_number] then
+            name = names[space_number]
         end
         local space = {
             number = space_number,
